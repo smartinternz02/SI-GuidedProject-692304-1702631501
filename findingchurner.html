@@ -1,0 +1,95 @@
+<!Doctype Html>  
+<Html>     
+<Head>       
+<style type=text/css>   
+body   
+{  
+   background-color:#C1F2B0;
+   font-size: 20px;
+   height: 125vh;  
+   margin-top: 20px;  
+   padding: 30px;  
+   background-size: cover;  
+   font-family: 'Times New Roman', Times, serif;  
+   text-align: justify;
+}  
+.myContainer {
+    border: 20px; 
+    padding: 15px; 
+    background-color: orange; 
+    border-radius: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.styledLabel {
+    color: black;
+    font-size: 16px; 
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+header 
+{  
+   background-color: black;  
+   position: fixed;  
+   left: 0;  
+   right: 0;  
+   top: 1px;  
+   height: 30px;  
+   display: flex;  
+   align-items: center;  
+}  
+header * {  
+display: inline;  
+}  
+header li {  
+margin: 20px;  
+}  
+header li a {  
+color: white;  
+text-decoration: none;  
+}  
+</style>   
+</Head>  
+ 
+<header>  
+<nav>
+<ul>
+<li> 
+    <form action="/home">
+        <button style="border-radius: 10px;font-weight: bold;">Home</button>
+    </form> 
+</li>  
+<li>  
+    <form action="/about">
+        <button style="border-radius: 10px;font-weight: bold;">About</button>
+    </form> 
+</li>  
+<li> 
+     <form action="/FindingChurner">
+        <button style="border-radius: 10px;font-weight: bold;">FindingChurner</button>
+     </form>   
+</li>  
+</ul>  
+</nav>  
+</header>  
+<Body>  
+    <form action="/predict" method="post">
+    <div class="myContainer">
+        Finding the Churner
+    </div>
+    <p class="styledLabel">Please enter the customer info </p>
+    <p class="styledLabel">BALANCE:</p>
+    <center><input type="text"  id="balance" name="balance" placeholder="BALANCE" required></center>
+    <p class="styledLabel">INSTALLMENTS_PURCHASES:</p>
+    <center><input type="text"  id="installmentspurchases" name="installmentspurchases" placeholder="INSTALLMENTS_PURCHASES" required></center>
+    <p class="styledLabel">CREDIT_LIMIT:</p>
+    <center><input type="text"  id="creditlimit" name="creditlimit" placeholder="CREDIT_LIMIT" required></center>
+    <p></p>
+    <center><input type="submit" value="Predict" style="border-radius: 10px;font-size: large;" ></center>
+    <center>{{prediction_text}}</center>
+    </form>
+</Body>   
+</Html>  
